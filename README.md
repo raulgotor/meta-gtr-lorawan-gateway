@@ -1,0 +1,1 @@
+execute 'TEMPLATECONF=/home/raulgotor/yocto-stm32-labs-new/meta-gtr-lorawan-gateway/meta-gtr-lorawan-gateway/conf/templates/default source poky/oe-init-build-env poky/build' at ../poky (or parent directory of this repo)

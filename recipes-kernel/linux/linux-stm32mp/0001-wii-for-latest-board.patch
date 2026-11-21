@@ -1,0 +1,39 @@
+From 48c2594d680e0405f34f3b7b5b74be8e12eee1f1 Mon Sep 17 00:00:00 2001
+From: Raul Gotor <raulgotor@gmail.com>
+Date: Wed, 11 Nov 2026 11:19:34 +0000
+Subject: [PATCH] wii for latest board
+
+---
+ arch/arm/boot/dts/st/stm32mp157f-dk2.dts | 21 +++++++++++----------
+ 1 file changed, 11 insertions(+), 10 deletions(-)
+
+diff --git a/arch/arm/boot/dts/st/stm32mp157f-dk2.dts b/arch/arm/boot/dts/st/stm32mp157f-dk2.dts
+index fdb9142d7..6ffce44b1 100644
+--- a/arch/arm/boot/dts/st/stm32mp157f-dk2.dts
++++ b/arch/arm/boot/dts/st/stm32mp157f-dk2.dts
+@@ -167,14 +167,15 @@ bluetooth {
+ };
+ 
+ &i2c5 {
+-	status = "okay";
+-	clock-frequency = <100000>;
+-	pinctrl-names = "default", "sleep";
+-	pinctrl-0 = <&i2c5_pins_a>;
+-	pinctrl-1 = <&i2c5_sleep_pins_a>;
+-
+-	nunchuk: nunchuk@52 {
+-		compatible = "nintendo,wiimote-extension";
+-		reg = <0x52>;
+-	};
++        status = "okay";
++        clock-frequency = <100000>;
++        pinctrl-names = "default", "sleep";
++        pinctrl-0 = <&i2c5_pins_a>;
++        pinctrl-1 = <&i2c5_sleep_pins_a>;
++
++        nunchuk: nunchuk@52 {
++                compatible = "nintendo,wiimote-extension";
++                reg = <0x52>;
++        };
+ };
++

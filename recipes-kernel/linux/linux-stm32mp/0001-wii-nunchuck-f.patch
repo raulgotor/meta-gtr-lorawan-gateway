@@ -1,0 +1,31 @@
+From 5eb08e46ad948a67d646ae20c22e5ecae4e32eaa Mon Sep 17 00:00:00 2001
+From: Raul Gotor <raulgotor@gmail.com>
+Date: Wed, 11 Nov 2026 11:44:15 +0000
+Subject: [PATCH] wii nunchuck f
+
+---
+ arch/arm/boot/dts/st/stm32mp157f-dk2.dts | 14 ++++++++++++++
+ 1 file changed, 14 insertions(+)
+
+diff --git a/arch/arm/boot/dts/st/stm32mp157f-dk2.dts b/arch/arm/boot/dts/st/stm32mp157f-dk2.dts
+index e22df14a0..e7f7768e4 100644
+--- a/arch/arm/boot/dts/st/stm32mp157f-dk2.dts
++++ b/arch/arm/boot/dts/st/stm32mp157f-dk2.dts
+@@ -165,3 +165,17 @@ bluetooth {
+ 		vddio-supply = <&v3v3>;
+ 	};
+ };
++
++
++&i2c5 {
++	status = "okay";
++	clock-frequency = <100000>;
++	pinctrl-names = "default", "sleep";
++	pinctrl-0 = <&i2c5_pins_a>;
++	pinctrl-1 = <&i2c5_sleep_pins_a>;
++
++	nunchuk: nunchuk@52 {
++		compatible = "nintendo,nunchuk";
++		reg = <0x52>;
++	};
++};
